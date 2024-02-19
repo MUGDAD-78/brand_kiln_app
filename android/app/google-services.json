@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "523576086394",
+    "project_id": "brand-kiln-app",
+    "storage_bucket": "brand-kiln-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523576086394:android:7aaf1892caeaebf06090c3",
+        "android_client_info": {
+          "package_name": "com.example.brand_kiln_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2SL8kBns8OEYEOLFXPEibQEUXalgWHxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
