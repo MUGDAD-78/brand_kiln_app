@@ -31,51 +31,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(
-                height: 400,
-                child: Stack(
-                  children: <Widget>[
-                    Positioned(
-                      top: -40,
-                      height: 400,
-                      width: width,
-                      child: FadeInUp(
-                          duration: const Duration(seconds: 1),
-                          child: Container(
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/background.png'),
-                                    fit: BoxFit.fill)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(
+              height: 400,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    height: 400,
+                    width: width + 20,
+                    child: FadeInUp(
+                        duration: const Duration(milliseconds: 1000),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                            image: AssetImage(
+                              'assets/img/background_img.png',
+                            ),
+                            fit: BoxFit.fill,
                           )),
-                    ),
-                    Positioned(
-                      height: 400,
-                      width: width + 20,
-                      child: FadeInUp(
-                          duration: const Duration(milliseconds: 1000),
-                          child: Container(
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(
-                                'assets/img/background_img.png',
-                              ),
-                              fit: BoxFit.fill,
-                            )),
-                          )),
-                    )
-                  ],
-                ),
+                        )),
+                  ),
+                ],
               ),
-              Padding(
+            ),
+            Form(
+              key: _formKey,
+              child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -206,23 +191,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               color: Color.fromRGBO(49, 39, 79, .6),
                             ),
                           ),
-                          FadeInUp(
-                               duration: const Duration(milliseconds: 1900),
-                            child: Center(child: TextButton(onPressed: (){
-                                        Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignInScreen()),
-                                );
-                            }, child: const Text('Already have account ?')))),
+                    FadeInUp(
+                        duration: const Duration(milliseconds: 1900),
+                        child: Center(
+                            child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignInScreen()),
+                                  );
+                                },
+                                child: const Text('Already have account ?')))),
                     const SizedBox(
                       height: 30,
                     ),
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

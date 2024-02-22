@@ -4,6 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 class FirebaseAuthFunc {
   registerMethod({required email, required password, required context}) async {
     try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         showAlertDilog(context, 'The password provided is too weak.');
